@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Interfaces;
 using POS.Application.Services;
+using POS.Infraestructure.Persistences.Interfaces;
+using POS.Infraestructure.Persistences.Repositories;
 
 namespace POS.Application.Extensions
 {
@@ -22,7 +24,7 @@ namespace POS.Application.Extensions
 			services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 			services.AddScoped<ICategoryApplication, CategoryApplication>();
-
+			
 			return services;
 		}
 	}

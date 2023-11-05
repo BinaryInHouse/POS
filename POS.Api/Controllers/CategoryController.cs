@@ -8,6 +8,7 @@
 namespace POS.Api.Controllers
     {
         [Route("api/[controller]")]
+        [ApiController]
         public class CategoryController : ControllerBase
 
         {
@@ -35,10 +36,10 @@ namespace POS.Api.Controllers
             }
 
         
-            [HttpGet("{CategoryId:int}")]
-            public async Task<IActionResult> CategoryId(int categoriId)
+            [HttpGet("{categoryId:int}")]
+            public async Task<IActionResult> CategoryId(int categoryId)
             {
-                var response = await _categoryApplication.CategoryById(categoriId);
+                var response = await _categoryApplication.CategoryById(categoryId);
 
                 return Ok(response);
             }

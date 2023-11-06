@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace POS.Domain.Entities;
 
 public partial class UsersBranchOffice
 {
+    [Key]
     public int UserBranchOfficeId { get; set; }
 
     public int? BranchOfficeId { get; set; }

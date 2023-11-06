@@ -102,7 +102,7 @@ namespace POS.Application.Services
             if (response.Data)
             {
                 response.IsSuccess = true;
-                response.Message = ReplyMessage.MESSAGE_FAILED;
+                response.Message = ReplyMessage.MESSAGE_QUERY_SAVE;
             }
             return response;
         }

@@ -11,10 +11,11 @@ namespace POS.Infraestructure.Persistences.Repositories
 {
     public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
-        public CategoryRepository(POSContext context):base(context){}
+        public CategoryRepository(POSContext context):base(context){  }
         public async Task<BaseEntityResponse<Category>> ListCategories(BaseFiltersRequest filters)
         {
             var response = new BaseEntityResponse<Category>();
+            
             var categories = GetEntityQuery(x => x.AuditDeleteUser == null && x.AuditDeleteDate == null);
 
             if(filters.NumFilter is not null && !string.IsNullOrEmpty(filters.TextFilter))
@@ -39,7 +40,7 @@ namespace POS.Infraestructure.Persistences.Repositories
             {
                 categories = categories.Where(x => x.AuditCreateDate >= Convert.ToDateTime(filters.StartDate) && x.AuditCreateDate <= Convert.ToDateTime(filters.EndDate).AddDays(1));
             }
-            if (filters.Sort is null) filters.Sort = "CategoryId";
+            if (filters.Sort is null) filters.Sort = "Id";
             {
                 response.TotalRecords = await categories.CountAsync();
                 response.Items = await Ordering(filters, categories, !(bool)filters.Download!).ToListAsync();

@@ -33,7 +33,7 @@ namespace POS.Infraestructure.Persistences.Repositories
 	    }
 	    public async Task<bool> RegisterAsync(T entity)
 	    {
-		    entity.AuditCreateUser = 1;
+ 		    entity.AuditCreateUser = 1;
 		    entity.AuditCreateDate = DateTime.Now;
 
 		    await _context.AddAsync(entity);

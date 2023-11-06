@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\POS.Api\POS.Api.csproj" />
+        <ProjectReference Include="..\POS.Api\POS.Api.csproj"/>
     </ItemGroup>
 
 </Project>

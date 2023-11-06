@@ -7,14 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-      <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.5" />
+        <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.19" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\POS.Domain\POS.Domain.csproj" />
-      <ProjectReference Include="..\POS.Utilities\POS.Utilities.csproj" />
+        <ProjectReference Include="..\POS.Domain\POS.Domain.csproj"/>
+        <ProjectReference Include="..\POS.Utilities\POS.Utilities.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -5,12 +5,12 @@ using POS.Domain.Entities;
 
 namespace POS.Infraestructure.Persistences.Contexts.Configurations
 {
+   
     public class MenuRoleConfiguration : IEntityTypeConfiguration<MenuRole>
     {
         public void Configure(EntityTypeBuilder<MenuRole> builder)
         {
-
-
+            
             builder.HasOne(d => d.Menu).WithMany(p => p.MenuRoles)
                 .HasForeignKey(d => d.MenuId)
                 .HasConstraintName("FK_MenuRoles_Menu");

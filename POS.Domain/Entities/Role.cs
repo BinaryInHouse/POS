@@ -6,7 +6,6 @@ namespace POS.Domain.Entities;
 public partial class Role
 {
     public int RoleId { get; set; }
-
     public string? Description { get; set; }
 
     public int? State { get; set; }

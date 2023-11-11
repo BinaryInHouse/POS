@@ -31,7 +31,7 @@ namespace POS.Test.Category
             var state = 1;
             var expected = ReplyMessage.MESSAGE_VALIDATE;
             //Act
-            var result = await context.RegisterCategory(new CategoryRequestDto()
+            var result = await context!.RegisterCategory(new CategoryRequestDto()
             {
                 Name = name,
                 Description  = description,
@@ -40,6 +40,29 @@ namespace POS.Test.Category
             var current = result.Message;
             //Assert
             Assert.AreEqual(expected, current);
+        }
+        
+        [TestMethod]
+        public async Task RegisterCategory_WhenSendingCorrectValues_RegisteredSuccessfully() 
+        {
+             using var scope = _scopeFactory?.CreateScope();
+                        var context = scope?.ServiceProvider.GetService<ICategoryApplication>();
+                        
+                        //Arrange
+                        var name = "Nuevo Registro";
+                        var description = "Nueva Descripción";
+                        var state = 1;
+                        var expected = ReplyMessage.MESSAGE_QUERY_SAVE;
+                        //Act
+                        var result = await context!.RegisterCategory(new CategoryRequestDto()
+                        {
+                            Name = name,
+                            Description  = description,
+                            State = state
+                        });
+                        var current = result.Message;
+                        //Assert
+                        Assert.AreEqual(expected, current);
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Interfaces;
 using POS.Application.Services;
+using POS.Infraestructure.FileStorage;
 using POS.Infraestructure.Persistences.Interfaces;
 using POS.Infraestructure.Persistences.Repositories;
 
@@ -25,7 +26,7 @@ namespace POS.Application.Extensions
 
 			services.AddScoped<ICategoryApplication, CategoryApplication>();
 			services.AddScoped<IUserApplication, UserApplication>();
-			
+			services.AddTransient<IAzureStorage, AzureStorage>();
 			return services;
 		}
 	}

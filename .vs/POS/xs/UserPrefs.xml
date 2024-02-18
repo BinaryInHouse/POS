@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{417069A4-2CE0-4734-A48D-B660F3C4DA3B}|Default">
+  <MonoDevelop.Ide.ItemProperties.src.POS.Api PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="POS.Api/appsettings.json">
+    <Files>
+      <File FileName="POS.Api/appsettings.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="POS">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="src" expanded="True">
+              <Node name="POS.Api" expanded="True">
+                <Node name="appsettings.json" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

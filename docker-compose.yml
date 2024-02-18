@@ -1,0 +1,29 @@
+﻿version: '3.4'
+services:
+  pos.api:
+    container_name: pos.api
+    image: pos.api
+    build:
+      context: . 
+      dockerfile: POS.Api/Dockerfile
+    ports:
+      - 2023:8080
+     # - 8084:443
+    networks:
+      - backend 
+########################################################## MSSQL Server 2019 ##################################################################################
+  sqlserver2019:
+    container_name: sqlserver2019
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1433:1433
+    environment:
+      - SA_PASSWORD=Password1234
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    networks:
+      - backend
+########################################################## Network ##################################################################################
+networks:
+  backend:
+    driver: bridge
